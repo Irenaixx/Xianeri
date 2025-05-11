@@ -228,4 +228,16 @@ function validate() {
   }
 }
 
+window.addEventListener("DOMContentLoaded", () => {
+  const progressBars = document.querySelectorAll('.progress');
+
+  progressBars.forEach(bar => {
+      const width = bar.style.width;
+      bar.style.width = '0';
+      setTimeout(() => {
+          bar.style.transition = 'width 1.5s ease-in-out';
+          bar.style.width = width;
+      }, 100);
+  });
+});
 
